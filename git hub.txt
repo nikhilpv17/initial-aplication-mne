@@ -1,0 +1,88 @@
+1. git log --oneline  --> to show all the logs and commits
+2. git --version  --> to knw the version of git
+3. git config --global user.name "Nikhil V"
+4. git config user.name
+5. git config --global user.email "Nikhil V"
+6. git config user.email
+
+7. git status  --> to know our current working directory
+8. git init --> to instantiate a new repository
+
+9. .git (an hidden folder) will be created by default when a directory is initialised
+
+10. git add <filename> --> to add untracked files
+    git add . --> to add all the changes at once
+    git add *<filename> --> to add all untracked files with tat name  
+                        -->add the file to the staging area
+11. git commit -m "message"
+
+12. git log == shows all the commits to a repo
+
+13. Atomic commit --> helps to roll back the changes easiy without affecting other files
+14. VIM -->default editor comes with terminal 
+        -->press 'i' to insert the comment
+        -->press 'esc' and type ':wq' to exit the vi
+15. git commit --amend  -->does the recommit, used to change the commit message, used only to modify the latest commit
+                        -->add the remaining files to the staging area and use the command, once the vi editor is closed, re commit will be completed.
+
+
+16. .gitignore is a text file, which includes the files and folders to be ignored by git (the files and folders with these extensions will not be tracked by git)
+
+17. HEAD -> refers to the latest commit in that perticular branch
+18. git branch -> lists all the branches in a repo
+
+19. git branch <branch name> -> to create branch
+20. git switch <branch name> -> to switch to a branch
+
+21. git commit -a -m "message" -> to add the changes to the staging area and commit the branch (insead of git add .)
+22. git switch -c <branch name> -> creates a branch and then switches to tat branch
+
+23. if there are any uncommitted changes git will not allow us to switch the branch (except to master). But if there are any untracked file we can sitch the branch
+
+24. git branch -d <branch name> -> deletes a branch
+    git branch -D <branch name> -> force delete a branch (if there are any merge issues)
+
+25. git branch -m <branch name> -> to rename the branch(should be on the branch to rename)
+
+26. git merge <branch name>
+27. git diff ->lists all the changes that are not staged 
+28. git diff HEAD -> lists all changes b/w latest commit and the changes that are either staged or unstaged
+29. git diff --staged ->lists all the changes b/w last commit and the staging area
+30. git diff HEAD <filename> <filename> -> to know changes in aparticular file (or)
+    git diff --staged <filename> <filename> 
+31. git diff branch1..branch2
+32. git diff commit1..commit2
+
+
+33. changes made in the local branch (not committed) will come along when switched to other branch only if there is no conflict.
+
+34. git stash ->to hide the staged or unstaged changes 
+35. git stash pop -> to pop up the stashed changes (recntly stashed only) in any branch
+36. git stash apply -> to apply the stashed changes in any branch without making the stashed changes empty
+37. git stash list -> to view all stashes
+
+38. git checkout commit ->HEAD shifts to a pertcular commit
+                        -> new branch can be created at this HEAD 
+           or
+    git checkout HEAD~1,2,3,...
+
+39. git switch - ->it will switch to the latest HEAD
+
+40. git checkout HEAD <file neame with extension> -> it will switch the HEAD without taking any changes(which are not commited, staged or unstaged) in the file/files 
+            or
+    git checkout -- <file name with extension> ->to discard the changes, works for unstaged changes
+            or
+    git restore <file neame with extension> ->works for unstaged changes
+
+41. git restore --source HEAD~<head number> <file name with extension> ->it will modify the file to tat perticular head, it can be used at any stage.
+
+42. git restore --staged <file name> ->to unstage a specific file which is staged by mist
+
+
+43. git reset <commit hash> -> it will switch the head to the specified commit hash, deletes all the commits after the specified head, the changes are carried to the newly shifted head in the unstaged form.
+44. git reset --hard <commit hash> -> it will switch the head to the specified commit hash, deletes all the commits after the specified head, the changes are not carried to the newly shifted head.
+45. git revert <commit hash> -> it ill remove the specifed commit from the current HEAD and creates a new commit (on top of current HEAD) with the changes.
+
+
+----------------git hub-----------------
+46. git clone <url>
